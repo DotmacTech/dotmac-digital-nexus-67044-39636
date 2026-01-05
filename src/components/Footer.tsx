@@ -137,40 +137,40 @@ const Footer = () => {
         <div className="container mx-auto px-4 pb-8">
           <div className="flex justify-center space-x-4">
             <a
-              href="https://facebook.com/dotmac.ng"
+              href="https://www.facebook.com/dotmac.ng/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-border transition-colors"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="Facebook"
             >
-              <Facebook className="h-5 w-5 text-foreground" />
+              <Facebook className="h-5 w-5" />
             </a>
             <a
-              href="https://twitter.com/dotmac_ng"
+              href="https://www.twitter.com/dotmac_ng/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-border transition-colors"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="Twitter"
             >
-              <Twitter className="h-5 w-5 text-foreground" />
+              <Twitter className="h-5 w-5" />
             </a>
             <a
-              href="https://instagram.com/dotmac_ng"
+              href="https://www.instagram.com/dotmac_ng/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-border transition-colors"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="Instagram"
             >
-              <Instagram className="h-5 w-5 text-foreground" />
+              <Instagram className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/company/dotmac-broadband-internet"
+              href="https://www.linkedin.com/search/results/all/?keywords=dotmac%20broadband%20internet&origin=RICH_QUERY_SUGGESTION&position=0&searchId=3f708c79-a6a2-4aed-b9da-56c161b0935a&sid=Oi6"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-border transition-colors"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5 text-foreground" />
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>
