@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dotmacLogo from "@/assets/dotmac-logo.png";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -102,8 +103,8 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-start space-x-3 group"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <MessageCircle className="h-5 w-5 text-white" />
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <img src={whatsappIcon} alt="WhatsApp" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">Chat with us</p>
