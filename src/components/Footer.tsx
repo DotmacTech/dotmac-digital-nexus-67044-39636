@@ -123,8 +123,8 @@ const Footer = () => {
                   <div>
                     <p className="font-semibold text-foreground mb-1">Where we are</p>
                     <p className="text-muted-foreground text-xs">
-                      Abuja: Area 11, Garki<br />
-                      Lagos: Allen Avenue, Ikeja
+                      <strong>Abuja:</strong> 8 Ikot Ekpene Close, off Emeka Anyaokwu Street, Area 11, Garki, Abuja<br /><br />
+                      <strong>Lagos:</strong> 2nd Floor Centage Plaza, 14 Allen Avenue, Ikeja, Lagos
                     </p>
                   </div>
                 </div>
