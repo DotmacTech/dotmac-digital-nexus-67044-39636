@@ -177,7 +177,7 @@ const Plans = () => {
             <a href={plan.buttonLink} target="_blank" rel="noopener noreferrer">
               <Button 
                 variant={plan.popular ? "default" : "outline"} 
-                className="w-full"
+                className={`w-full ${!plan.popular ? 'hover:bg-primary hover:text-primary-foreground transition-colors duration-300' : ''}`}
               >
                 {plan.buttonText || "View Plan"}
               </Button>
@@ -186,7 +186,7 @@ const Plans = () => {
             <Link to={plan.buttonLink}>
               <Button 
                 variant={plan.popular ? "default" : "outline"} 
-                className="w-full"
+                className={`w-full ${!plan.popular ? 'hover:bg-primary hover:text-primary-foreground transition-colors duration-300' : ''}`}
               >
                 {plan.buttonText || "Subscribe Now"}
               </Button>
@@ -196,7 +196,7 @@ const Plans = () => {
           <Link to="/contact">
             <Button 
               variant={plan.popular ? "default" : "outline"} 
-              className="w-full"
+              className={`w-full ${!plan.popular ? 'hover:bg-primary hover:text-primary-foreground transition-colors duration-300' : ''}`}
             >
               {plan.price === "Custom" || plan.price === "Contact Us" ? "Contact Sales" : "Get Started"}
             </Button>
@@ -231,7 +231,7 @@ const Plans = () => {
             </div>
             <div className="text-center mt-8">
               <a href="https://fiber.dotmac.ng/plans/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="text-lg hover:bg-primary hover:text-white transition-colors duration-300">
+                <Button size="lg" variant="outline" className="text-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
                   See More Plans
                 </Button>
               </a>
