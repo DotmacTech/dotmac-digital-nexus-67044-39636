@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dotmacLogo from "@/assets/dotmac-logo.png";
 
@@ -96,22 +96,22 @@ const Footer = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-foreground" />
+                <a 
+                  href="https://wa.me/2348121179536"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start space-x-3 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <MessageCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Talk to us</p>
-                    <a
-                      href="https://wa.me/2348121179536"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <p className="font-semibold text-foreground mb-1">Chat with us</p>
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors">
                       +234 812 117 9536
-                    </a>
+                    </p>
                   </div>
-                </div>
+                </a>
                 
                 <div className="flex items-start space-x-3">
                   <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
