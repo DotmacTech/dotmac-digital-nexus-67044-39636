@@ -44,21 +44,21 @@ const Services = () => {
     }
   ];
 
-  const governmentServices = [
+  const businessServices = [
     {
       icon: Phone,
-      title: "GovConnect",
-      description: "Hosted IP voice and video for government agencies"
+      title: "BizConnect",
+      description: "Hosted IP voice and video for businesses"
     },
     {
       icon: Network,
-      title: "GovNet Direct",
+      title: "BIZNet Direct",
       description: "Secure intranet portal for collaboration"
     },
     {
       icon: Mail,
-      title: "Govmail",
-      description: "Official government email service"
+      title: "Bizmail",
+      description: "Professional business email service"
     },
     {
       icon: Globe,
@@ -235,7 +235,7 @@ const Services = () => {
         <Tabs defaultValue="cloud" className="w-full">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-12">
             <TabsTrigger value="cloud">Cloud & Data Center</TabsTrigger>
-            <TabsTrigger value="government">Government Services</TabsTrigger>
+            <TabsTrigger value="business">Business Services</TabsTrigger>
             <TabsTrigger value="it">IT & Network</TabsTrigger>
             <TabsTrigger value="connectivity">Internet Services</TabsTrigger>
             <TabsTrigger value="consulting">Consulting</TabsTrigger>
@@ -258,7 +258,7 @@ const Services = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="government" className="space-y-8">
+          <TabsContent value="business" className="space-y-8">
             <div 
               className="rounded-2xl overflow-hidden h-64 mb-8"
               style={{
@@ -268,7 +268,7 @@ const Services = () => {
               }}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {governmentServices.map((service) => (
+              {businessServices.map((service) => (
                 <ServiceCard key={service.title} {...service} />
               ))}
             </div>
