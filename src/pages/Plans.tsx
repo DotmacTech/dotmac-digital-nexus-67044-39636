@@ -9,7 +9,7 @@ const Plans = () => {
     {
       name: "Home Basic",
       speed: "30 Mbps",
-      price: "₦15,000",
+      price: "₦16,125",
       period: "/month",
       features: [
         "Fiber to the Home (FTTH)",
@@ -23,7 +23,7 @@ const Plans = () => {
     {
       name: "Home Premium",
       speed: "50 Mbps",
-      price: "₦25,000",
+      price: "₦26,875",
       period: "/month",
       popular: true,
       features: [
@@ -38,7 +38,7 @@ const Plans = () => {
     {
       name: "Home Ultra",
       speed: "100 Mbps",
-      price: "₦40,000",
+      price: "₦43,000",
       period: "/month",
       features: [
         "Fiber to the Home (FTTH)",
@@ -68,7 +68,7 @@ const Plans = () => {
   const cloudPlans = [
     {
       name: "Cloud Starter",
-      price: "₦50,000",
+      price: "₦53,750",
       period: "/month",
       features: [
         "2 vCPUs",
@@ -81,7 +81,7 @@ const Plans = () => {
     },
     {
       name: "Cloud Business",
-      price: "₦150,000",
+      price: "₦161,250",
       period: "/month",
       popular: true,
       features: [
@@ -113,7 +113,7 @@ const Plans = () => {
   const hostingPlans = [
     {
       name: "Shared Hosting",
-      price: "₦3,000",
+      price: "₦3,225",
       period: "/month",
       features: [
         "1 Website",
@@ -126,7 +126,7 @@ const Plans = () => {
     },
     {
       name: "Business Hosting",
-      price: "₦8,000",
+      price: "₦8,600",
       period: "/month",
       features: [
         "5 Websites",
@@ -139,7 +139,7 @@ const Plans = () => {
     },
     {
       name: "Email Hosting",
-      price: "₦5,000",
+      price: "₦5,375",
       period: "/user/month",
       features: [
         "Custom Email Domain",
