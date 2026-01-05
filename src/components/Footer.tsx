@@ -90,8 +90,8 @@ const Footer = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">Send us a message</p>
-                    <a href="mailto:info@dotmac.ng" className="text-muted-foreground hover:text-foreground transition-colors">
-                      info@dotmac.ng
+                    <a href="mailto:sales@dotmac.ng" className="text-muted-foreground hover:text-foreground transition-colors">
+                      sales@dotmac.ng
                     </a>
                   </div>
                 </div>
@@ -102,9 +102,6 @@ const Footer = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">Talk to us</p>
-                    <a href="tel:02019125161" className="text-muted-foreground hover:text-foreground transition-colors block">
-                      02019125161
-                    </a>
                     <a
                       href="https://wa.me/2348121179536"
                       target="_blank"
