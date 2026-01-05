@@ -7,69 +7,59 @@ import { Link } from "react-router-dom";
 const Plans = () => {
   const internetPlans = [
     {
-      name: "Home Basic",
-      speed: "30 Mbps",
-      price: "₦16,125",
-      period: "/month",
+      name: "High Speed Internet Plans",
+      speed: "Up to 100Mbps",
+      price: "From ₦16,125.00",
+      period: "/Month",
       features: [
-        "Fiber to the Home (FTTH)",
-        "Capped Data Option",
+        "Capped Data",
+        "Multiple Users",
         "Data Rollover",
-        "No Speed Throttling",
-        "Multiple Users Supported",
-        "24/7 Technical Support"
-      ]
+        "No speed throttle",
+        "Available on ground fiber"
+      ],
+      buttonText: "View Plan",
+      buttonLink: "https://fiber.dotmac.ng/plans/"
     },
     {
-      name: "Home Premium",
-      speed: "50 Mbps",
-      price: "₦26,875",
-      period: "/month",
+      name: "Unlimited Internet Plans",
+      speed: "30 Days Validity",
+      price: "From ₦18,812.50",
+      period: "/Month",
       popular: true,
       features: [
-        "Fiber to the Home (FTTH)",
-        "Unlimited Data",
-        "Data Rollover",
-        "No Speed Throttling",
-        "Up to 10 Devices",
-        "Priority Support"
-      ]
+        "Uncapped Data",
+        "Multiple Users",
+        "Unlimited Uploads and Downloads",
+        "No speed throttle",
+        "Available on ground and air fiber"
+      ],
+      buttonText: "View Plan",
+      buttonLink: "https://fiber.dotmac.ng/plans/"
     },
     {
-      name: "Home Ultra",
-      speed: "100 Mbps",
-      price: "₦43,000",
-      period: "/month",
-      features: [
-        "Fiber to the Home (FTTH)",
-        "Unlimited Data",
-        "No Speed Throttling",
-        "Up to 20 Devices",
-        "Priority Support",
-        "Free Installation"
-      ]
-    },
-    {
-      name: "Business Pro",
-      speed: "Dedicated",
+      name: "Dedicated Internet Plan",
+      speed: "High Bandwidth",
       price: "Custom",
       period: "",
       features: [
-        "Guaranteed Bandwidth",
-        "Low Latency",
-        "Dedicated IP Address",
-        "SLA Guarantee",
-        "24/7 Premium Support",
-        "Load Balancing Options"
-      ]
+        "Delivers higher bandwidth requirements",
+        "High-performance ability",
+        "Low latency and high response time",
+        "Guaranteed speed",
+        "Additional IP address upon request",
+        "Available on ground fiber"
+      ],
+      buttonText: "Subscribe Now",
+      buttonLink: "/contact"
     }
   ];
 
   const cloudPlans = [
     {
       name: "Cloud Starter",
-      price: "₦53,750",
-      period: "/month",
+      price: "Contact Us",
+      period: "",
       features: [
         "2 vCPUs",
         "4 GB RAM",
@@ -81,8 +71,8 @@ const Plans = () => {
     },
     {
       name: "Cloud Business",
-      price: "₦161,250",
-      period: "/month",
+      price: "Contact Us",
+      period: "",
       popular: true,
       features: [
         "4 vCPUs",
@@ -96,7 +86,7 @@ const Plans = () => {
     },
     {
       name: "Cloud Enterprise",
-      price: "Custom",
+      price: "Contact Us",
       period: "",
       features: [
         "Custom vCPUs",
@@ -113,8 +103,8 @@ const Plans = () => {
   const hostingPlans = [
     {
       name: "Shared Hosting",
-      price: "₦3,225",
-      period: "/month",
+      price: "Contact Us",
+      period: "",
       features: [
         "1 Website",
         "10 GB Storage",
@@ -126,8 +116,8 @@ const Plans = () => {
     },
     {
       name: "Business Hosting",
-      price: "₦8,600",
-      period: "/month",
+      price: "Contact Us",
+      period: "",
       features: [
         "5 Websites",
         "50 GB Storage",
@@ -139,8 +129,8 @@ const Plans = () => {
     },
     {
       name: "Email Hosting",
-      price: "₦5,375",
-      period: "/user/month",
+      price: "Contact Us",
+      period: "",
       features: [
         "Custom Email Domain",
         "25 GB Storage",
@@ -152,7 +142,7 @@ const Plans = () => {
     }
   ];
 
-  const renderPlanCard = (plan: any) => (
+  const renderPlanCard = (plan: any, isInternetPlan: boolean = false) => (
     <Card key={plan.name} className={`glass border-border/50 hover-lift relative ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
       {plan.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -182,14 +172,36 @@ const Plans = () => {
             </li>
           ))}
         </ul>
-        <Link to="/contact">
-          <Button 
-            variant={plan.popular ? "default" : "outline"} 
-            className="w-full"
-          >
-            {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
-          </Button>
-        </Link>
+        {isInternetPlan && plan.buttonLink ? (
+          plan.buttonLink.startsWith('http') ? (
+            <a href={plan.buttonLink} target="_blank" rel="noopener noreferrer">
+              <Button 
+                variant={plan.popular ? "default" : "outline"} 
+                className="w-full"
+              >
+                {plan.buttonText || "View Plan"}
+              </Button>
+            </a>
+          ) : (
+            <Link to={plan.buttonLink}>
+              <Button 
+                variant={plan.popular ? "default" : "outline"} 
+                className="w-full"
+              >
+                {plan.buttonText || "Subscribe Now"}
+              </Button>
+            </Link>
+          )
+        ) : (
+          <Link to="/contact">
+            <Button 
+              variant={plan.popular ? "default" : "outline"} 
+              className="w-full"
+            >
+              {plan.price === "Custom" || plan.price === "Contact Us" ? "Contact Sales" : "Get Started"}
+            </Button>
+          </Link>
+        )}
       </CardContent>
     </Card>
   );
@@ -214,23 +226,30 @@ const Plans = () => {
           </TabsList>
 
           <TabsContent value="internet">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-              {internetPlans.map(renderPlanCard)}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
+              {internetPlans.map((plan) => renderPlanCard(plan, true))}
             </div>
-            <p className="text-center text-muted-foreground mt-8 text-sm">
+            <div className="text-center mt-8">
+              <a href="https://fiber.dotmac.ng/plans/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="text-lg hover:bg-primary hover:text-white transition-colors duration-300">
+                  See More Plans
+                </Button>
+              </a>
+            </div>
+            <p className="text-center text-muted-foreground mt-4 text-sm">
               * Internet services primarily available in Abuja and Lagos
             </p>
           </TabsContent>
 
           <TabsContent value="cloud">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
-              {cloudPlans.map(renderPlanCard)}
+              {cloudPlans.map((plan) => renderPlanCard(plan, false))}
             </div>
           </TabsContent>
 
           <TabsContent value="hosting">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
-              {hostingPlans.map(renderPlanCard)}
+              {hostingPlans.map((plan) => renderPlanCard(plan, false))}
             </div>
           </TabsContent>
         </Tabs>
