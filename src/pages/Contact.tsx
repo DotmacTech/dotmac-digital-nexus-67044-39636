@@ -165,12 +165,7 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">
-                      <a href="tel:02019125161" className="hover:text-primary transition-colors">
-                        02019125161
-                      </a>
-                    </p>
+                    <h3 className="font-semibold mb-1">WhatsApp</h3>
                     <p className="text-muted-foreground">
                       <a 
                         href="https://wa.me/2348121179536" 
@@ -178,7 +173,7 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="hover:text-primary transition-colors"
                       >
-                        +234 812 117 9536 (WhatsApp)
+                        +234 812 117 9536
                       </a>
                     </p>
                   </div>
@@ -191,8 +186,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Business Hours</h3>
                     <p className="text-muted-foreground">
-                      Monday - Friday: 8:00 AM - 6:00 PM<br />
-                      Saturday: 9:00 AM - 2:00 PM
+                      24/7 - We're always available
                     </p>
                   </div>
                 </div>
