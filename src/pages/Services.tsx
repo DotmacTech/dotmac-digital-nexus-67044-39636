@@ -10,6 +10,9 @@ import {
 import cloudImage from "@/assets/cloud-services.jpg";
 import cyberImage from "@/assets/cybersecurity.jpg";
 import govImage from "@/assets/government-services.jpg";
+import itNetworkImage from "@/assets/it-network.jpg";
+import internetImage from "@/assets/internet-services.jpg";
+import otherImage from "@/assets/other-services.jpg";
 
 const Services = () => {
   const cloudServices = [
@@ -285,6 +288,14 @@ const Services = () => {
           </TabsContent>
 
           <TabsContent value="it" className="space-y-8">
+            <div 
+              className="rounded-2xl overflow-hidden h-64 mb-8"
+              style={{
+                backgroundImage: `url(${itNetworkImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {itNetworkServices.map((service) => (
                 <ServiceCard key={service.title} {...service} />
@@ -293,6 +304,14 @@ const Services = () => {
           </TabsContent>
 
           <TabsContent value="connectivity" className="space-y-8">
+            <div 
+              className="rounded-2xl overflow-hidden h-64 mb-8"
+              style={{
+                backgroundImage: `url(${internetImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {connectivityServices.map((service) => (
                 <a 
@@ -325,6 +344,14 @@ const Services = () => {
           </TabsContent>
 
           <TabsContent value="other" className="space-y-8">
+            <div 
+              className="rounded-2xl overflow-hidden h-64 mb-8"
+              style={{
+                backgroundImage: `url(${otherImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherServices.map((service) => (
                 <ServiceCard key={service.title} {...service} />
