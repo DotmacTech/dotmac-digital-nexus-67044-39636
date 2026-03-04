@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ServiceCard from "@/components/ServiceCard";
 import { 
@@ -62,8 +63,9 @@ const Services = () => {
     },
     {
       icon: Globe,
-      title: "GovDNS",
-      description: "gov.ng domain registration and management"
+      title: ".ngDNS",
+      description: ".ng domain registration and management",
+      link: "/domain-search"
     },
     {
       icon: FileText,
@@ -268,9 +270,17 @@ const Services = () => {
               }}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {businessServices.map((service) => (
-                <ServiceCard key={service.title} {...service} />
-              ))}
+              {businessServices.map((service) => {
+                const card = <ServiceCard key={service.title} {...service} />;
+                if ('link' in service && (service as any).link) {
+                  return (
+                    <Link key={service.title} to={(service as any).link} className="block">
+                      {card}
+                    </Link>
+                  );
+                }
+                return card;
+              })}
             </div>
           </TabsContent>
 
