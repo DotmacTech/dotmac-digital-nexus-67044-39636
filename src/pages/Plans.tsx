@@ -100,6 +100,50 @@ const Plans = () => {
     }
   ];
 
+  const domainPlans = [
+    {
+      name: ".ng Domain",
+      price: "Contact Us",
+      period: "",
+      features: [
+        "Premium .ng domain registration",
+        "DNS management included",
+        "WHOIS privacy protection",
+        "Domain locking",
+        "Email forwarding",
+        "1-year registration"
+      ]
+    },
+    {
+      name: ".com.ng Domain",
+      price: "Contact Us",
+      period: "",
+      popular: true,
+      features: [
+        ".com.ng domain registration",
+        "DNS management included",
+        "WHOIS privacy protection",
+        "Domain locking",
+        "Email forwarding",
+        "1-year registration",
+        "Free domain search"
+      ]
+    },
+    {
+      name: ".org.ng / .net.ng",
+      price: "Contact Us",
+      period: "",
+      features: [
+        ".org.ng or .net.ng registration",
+        "DNS management included",
+        "WHOIS privacy protection",
+        "Domain locking",
+        "Email forwarding",
+        "1-year registration"
+      ]
+    }
+  ];
+
   const hostingPlans = [
     {
       name: "Shared Hosting",
@@ -219,9 +263,10 @@ const Plans = () => {
 
         {/* Pricing Tabs */}
         <Tabs defaultValue="internet" className="w-full">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-12">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-12">
             <TabsTrigger value="internet">Internet Plans</TabsTrigger>
             <TabsTrigger value="cloud">Cloud Solutions</TabsTrigger>
+            <TabsTrigger value="domain">.ngDNS Domains</TabsTrigger>
             <TabsTrigger value="hosting">Hosting & Email</TabsTrigger>
           </TabsList>
 
@@ -244,6 +289,19 @@ const Plans = () => {
           <TabsContent value="cloud">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
               {cloudPlans.map((plan) => renderPlanCard(plan, false))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="domain">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
+              {domainPlans.map((plan) => renderPlanCard(plan, false))}
+            </div>
+            <div className="text-center mt-8">
+              <Link to="/domain-search">
+                <Button size="lg" variant="outline" className="text-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+                  Search Available Domains
+                </Button>
+              </Link>
             </div>
           </TabsContent>
 

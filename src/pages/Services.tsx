@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ServiceCard from "@/components/ServiceCard";
 import { 
@@ -9,6 +10,9 @@ import {
 import cloudImage from "@/assets/cloud-services.jpg";
 import cyberImage from "@/assets/cybersecurity.jpg";
 import govImage from "@/assets/government-services.jpg";
+import itNetworkImage from "@/assets/it-network.jpg";
+import internetImage from "@/assets/internet-services.jpg";
+import otherImage from "@/assets/other-services.jpg";
 
 const Services = () => {
   const cloudServices = [
@@ -62,8 +66,9 @@ const Services = () => {
     },
     {
       icon: Globe,
-      title: "GovDNS",
-      description: "gov.ng domain registration and management"
+      title: ".ngDNS",
+      description: ".ng domain registration and management",
+      link: "/domain-search"
     },
     {
       icon: FileText,
@@ -268,13 +273,29 @@ const Services = () => {
               }}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {businessServices.map((service) => (
-                <ServiceCard key={service.title} {...service} />
-              ))}
+              {businessServices.map((service) => {
+                const card = <ServiceCard key={service.title} {...service} />;
+                if ('link' in service && (service as any).link) {
+                  return (
+                    <Link key={service.title} to={(service as any).link} className="block">
+                      {card}
+                    </Link>
+                  );
+                }
+                return card;
+              })}
             </div>
           </TabsContent>
 
           <TabsContent value="it" className="space-y-8">
+            <div 
+              className="rounded-2xl overflow-hidden h-64 mb-8"
+              style={{
+                backgroundImage: `url(${itNetworkImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {itNetworkServices.map((service) => (
                 <ServiceCard key={service.title} {...service} />
@@ -283,6 +304,14 @@ const Services = () => {
           </TabsContent>
 
           <TabsContent value="connectivity" className="space-y-8">
+            <div 
+              className="rounded-2xl overflow-hidden h-64 mb-8"
+              style={{
+                backgroundImage: `url(${internetImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {connectivityServices.map((service) => (
                 <a 
@@ -315,6 +344,14 @@ const Services = () => {
           </TabsContent>
 
           <TabsContent value="other" className="space-y-8">
+            <div 
+              className="rounded-2xl overflow-hidden h-64 mb-8"
+              style={{
+                backgroundImage: `url(${otherImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherServices.map((service) => (
                 <ServiceCard key={service.title} {...service} />
